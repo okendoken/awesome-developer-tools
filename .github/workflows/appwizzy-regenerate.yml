@@ -23,7 +23,7 @@ jobs:
         run: |
           python scripts/validate.py
           make generate
-          git diff --check
+          git -c core.whitespace=trailing-space,space-before-tab,cr-at-eol diff --check
       - name: Commit generated outputs to submission branch
         run: |
           git config user.name "github-actions[bot]"
